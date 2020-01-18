@@ -78,9 +78,9 @@ public class FreteRepositoryIntegrationQueryTest {
 
 		List<Frete> fretes = freteRepository.todos(new Sort(Sort.Direction.ASC, "id"));
 
-		Assert.assertTrue(fretes.get(0).getCliente().getNome().equals("Breno"));
+		Assert.assertTrue(fretes.get(2).getCliente().getNome().equals("Breno"));
 		Assert.assertTrue(fretes.get(1).getCliente().getNome().equals("Pablo"));
-		Assert.assertTrue(fretes.get(2).getCliente().getNome().equals("Valerio"));
+		Assert.assertTrue(fretes.get(0).getCliente().getNome().equals("Valerio"));
 	}
 
 

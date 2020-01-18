@@ -62,8 +62,9 @@ public class FretesRepositoryIntegrationTest {
 		expectedException.expect(ConstraintViolationException.class);
 		expectedException.expectMessage("A descricao deve ser preenchida");
 
-		frete.setDescricao(null);
+		frete.setDescricao("");
 		freteRepository.save(frete);
+		System.out.println("########## " + frete);
 	}
 
 	@Test

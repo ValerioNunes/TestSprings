@@ -2,6 +2,7 @@ package integracao.bancodedados.clientes;
 
 import integracao.bancodedados.cliente.Cliente;
 import integracao.bancodedados.cliente.ClienteRepository;
+import integracao.bancodedados.frete.FreteService;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -51,6 +52,8 @@ public class ClienteRepositoryIntegrationQueryTest {
 		Assert.assertTrue(clientes.get(1).getNome().equals("Pablo"));
 		Assert.assertTrue(clientes.get(2).getNome().equals("Valerio"));
 	}
+
+
 
 
 }

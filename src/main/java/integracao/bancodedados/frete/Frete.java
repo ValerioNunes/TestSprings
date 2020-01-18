@@ -8,21 +8,15 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
+import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
-public class Frete {
+public class Frete implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
-
-	@NotNull(message="O cliente deve ser preenchido")
-	@ManyToOne(cascade= {CascadeType.MERGE, CascadeType.PERSIST})
-	private Cliente cliente;
-
-	@NotNull(message="A cidade deve ser preenchida")
-	@ManyToOne(cascade= {CascadeType.MERGE, CascadeType.PERSIST})
-	private Cidade cidade;
 
 	@NotBlank(message="A descricao deve ser preenchida")
 	private String descricao;
@@ -33,9 +27,17 @@ public class Frete {
 	@PositiveOrZero(message="O valor deve ser preenchido")
 	private double valor;
 
+	@NotNull(message="O cliente deve ser preenchido")
+	@ManyToOne(cascade= { CascadeType.MERGE})
+	private Cliente cliente;
+
+	@NotNull(message="A cidade deve ser preenchida")
+	@ManyToOne(cascade= { CascadeType.MERGE})
+	private Cidade cidade;
+
 	public Frete() {}
 
-	public Frete(double valor, String descricao, double peso, Cliente cliente ,Cidade cidade) {
+	public Frete(double valor, String descricao, double peso, Cliente cliente, Cidade cidade) {
 		this.valor = valor + valor*cidade.gettaxa()/100;
 		this.descricao = descricao;
 		this.peso = peso;
@@ -89,5 +91,18 @@ public class Frete {
 
 	public void setValor(double valor) {
 		this.valor = valor;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Frete)) return false;
+		Frete frete = (Frete) o;
+		return Objects.equals(getId(), frete.getId());
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(getId());
 	}
 }
