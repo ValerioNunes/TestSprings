@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.PositiveOrZero;
+import java.util.Objects;
 
 @Entity
 public class Cidade {
@@ -63,5 +64,19 @@ public class Cidade {
         this.nome = nome;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Cidade)) return false;
+        Cidade cidade = (Cidade) o;
+        return Double.compare(cidade.taxa, taxa) == 0 &&
+                getId().equals(cidade.getId()) &&
+                getUF().equals(cidade.getUF()) &&
+                getNome().equals(cidade.getNome());
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), taxa, getUF(), getNome());
+    }
 }

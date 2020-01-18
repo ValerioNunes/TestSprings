@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
+import java.util.Objects;
 
 @Entity
 public class Cliente {
@@ -59,5 +60,21 @@ public class Cliente {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Cliente)) return false;
+        Cliente cliente = (Cliente) o;
+        return getId().equals(cliente.getId()) &&
+                getEndereco().equals(cliente.getEndereco()) &&
+                getTelefone().equals(cliente.getTelefone()) &&
+                getNome().equals(cliente.getNome());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getEndereco(), getTelefone(), getNome());
     }
 }

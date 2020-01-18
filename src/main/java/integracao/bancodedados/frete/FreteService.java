@@ -24,12 +24,16 @@ public class FreteService {
 
     public Frete inserir(Frete frete) throws FreteException {
         try {
-            freteRepository.save(frete);
+            frete = freteRepository.save(frete);
         } catch (ConstraintViolationException e) {
             throw new FreteException(e);
         }
         return frete;
     }
+    public Frete inserirOuAlterar(Frete frete) {
+            return freteRepository.save(frete);
+    }
+
     public List<Frete> buscarFretes(){
         return  freteRepository.todos(new Sort(Sort.Direction.ASC, "id"));
     }

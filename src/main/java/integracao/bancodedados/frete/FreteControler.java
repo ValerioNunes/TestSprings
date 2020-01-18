@@ -8,12 +8,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URISyntaxException;
 import java.util.List;
-
+@RestController
+@RequestMapping("/fretecontroler")
 public class FreteControler {
-
-    @RestController
-    @RequestMapping("/fretecontroler")
-    public class AgendaController {
 
         @Autowired
         private FreteService freteService;
@@ -33,7 +30,7 @@ public class FreteControler {
 
         @PostMapping("/inserir")
         public ResponseEntity<Frete> inserir(@RequestBody @Valid Frete frete) throws URISyntaxException, FreteException {
-            frete = freteService.inserir(frete);
+            frete = freteService.inserirOuAlterar(frete);
             return new ResponseEntity<>(frete, HttpStatus.CREATED);
         }
 
@@ -50,4 +47,4 @@ public class FreteControler {
         }
 
     }
-}
+
