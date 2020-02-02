@@ -1,11 +1,10 @@
-package integracao.bancodedados.frete;
+package com.example.bancodedados.frete;
 
-import integracao.bancodedados.cliente.Cliente;
-import integracao.bancodedados.cidade.Cidade;
+import com.example.bancodedados.cliente.Cliente;
+import com.example.bancodedados.cidade.Cidade;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 import java.io.Serializable;

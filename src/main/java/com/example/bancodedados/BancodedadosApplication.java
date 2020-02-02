@@ -1,4 +1,4 @@
-package integracao.bancodedados;
+package com.example.bancodedados;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

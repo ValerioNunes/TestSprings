@@ -1,21 +1,20 @@
-package integracao.bancodedados.fretes;
+package com.example.bancodedados.fretes;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import integracao.bancodedados.cidade.Cidade;
-import integracao.bancodedados.cidade.CidadeRepository;
-import integracao.bancodedados.cliente.Cliente;
-import integracao.bancodedados.cliente.ClienteRepository;
-import integracao.bancodedados.frete.Frete;
-import integracao.bancodedados.frete.FreteException;
-import integracao.bancodedados.frete.FreteRepository;
-import integracao.bancodedados.frete.FreteService;
+import com.example.bancodedados.cidade.Cidade;
+import com.example.bancodedados.cidade.CidadeRepository;
+import com.example.bancodedados.cliente.Cliente;
+import com.example.bancodedados.cliente.ClienteRepository;
+import com.example.bancodedados.frete.Frete;
+import com.example.bancodedados.frete.FreteException;
+import com.example.bancodedados.frete.FreteRepository;
+import com.example.bancodedados.frete.FreteService;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -23,7 +22,6 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.io.DataInput;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package integracao.bancodedados.cidade;
+package com.example.bancodedados.cidade;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

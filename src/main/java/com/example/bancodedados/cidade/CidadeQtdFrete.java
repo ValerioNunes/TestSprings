@@ -1,4 +1,4 @@
-package integracao.bancodedados.cidade;
+package com.example.bancodedados.cidade;
 
 public class CidadeQtdFrete {
     Cidade cidade;

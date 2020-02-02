@@ -1,4 +1,4 @@
-package integracao.bancodedados.frete;
+package com.example.bancodedados.frete;
 
 public class FreteException extends Exception {
 

@@ -1,8 +1,7 @@
-package integracao.bancodedados.clientes;
+package com.example.bancodedados.clientes;
 
-import integracao.bancodedados.cliente.Cliente;
-import integracao.bancodedados.cliente.ClienteRepository;
-import integracao.bancodedados.frete.FreteService;
+import com.example.bancodedados.cliente.Cliente;
+import com.example.bancodedados.cliente.ClienteRepository;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

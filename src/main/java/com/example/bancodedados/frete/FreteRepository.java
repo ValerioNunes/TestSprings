@@ -1,19 +1,11 @@
-package integracao.bancodedados.frete;
+package com.example.bancodedados.frete;
 
-import integracao.bancodedados.cidade.CidadeQtdFrete;
-import integracao.bancodedados.frete.Frete;
-import org.junit.runner.RunWith;
-import org.springframework.boot.jdbc.EmbeddedDatabaseConnection;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import com.example.bancodedados.cidade.CidadeQtdFrete;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.jpa.repository.QueryHints;
 import org.springframework.stereotype.Repository;
-import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.persistence.QueryHint;
 import java.util.List;
 
 @Repository

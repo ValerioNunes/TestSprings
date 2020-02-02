@@ -1,6 +1,5 @@
-package integracao.bancodedados.cliente;
+package com.example.bancodedados.cliente;
 
-import integracao.bancodedados.cliente.Cliente;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
