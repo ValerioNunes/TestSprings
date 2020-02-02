@@ -1,11 +1,17 @@
-package com.example.bancodedados.frete;
+package integracao.bancodedados.frete;
 
-import com.example.bancodedados.cidade.Cidade;
+import integracao.bancodedados.cidade.Cidade;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.jdbc.EmbeddedDatabaseConnection;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.validation.ConstraintViolationException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

@@ -1,11 +1,11 @@
-package com.example.bancodedados.fretes;
+package integracao.bancodedados.fretes;
 
-import com.example.bancodedados.cidade.Cidade;
-import com.example.bancodedados.cidade.CidadeRepository;
-import com.example.bancodedados.cliente.Cliente;
-import com.example.bancodedados.cliente.ClienteRepository;
-import com.example.bancodedados.frete.Frete;
-import com.example.bancodedados.frete.FreteRepository;
+import integracao.bancodedados.cidade.Cidade;
+import integracao.bancodedados.cidade.CidadeRepository;
+import integracao.bancodedados.cliente.Cliente;
+import integracao.bancodedados.cliente.ClienteRepository;
+import integracao.bancodedados.frete.Frete;
+import integracao.bancodedados.frete.FreteRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
@@ -18,6 +18,7 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.validation.ConstraintViolationException;
 import java.util.List;
 
 /*

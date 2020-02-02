@@ -1,4 +1,4 @@
-package com.example.bancodedados;
+package integracao.bancodedados;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

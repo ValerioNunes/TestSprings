@@ -1,7 +1,8 @@
-package com.example.bancodedados.cidades;
+package integracao.bancodedados.cidades;
 
-import com.example.bancodedados.cidade.Cidade;
-import com.example.bancodedados.cidade.CidadeRepository;
+import integracao.bancodedados.cidade.CidadeRepository;
+import integracao.bancodedados.cidade.Cidade;
+import integracao.bancodedados.cidade.CidadeRepository;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

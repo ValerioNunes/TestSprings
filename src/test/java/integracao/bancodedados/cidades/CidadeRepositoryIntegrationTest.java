@@ -1,7 +1,7 @@
-package com.example.bancodedados.clientes;
+package integracao.bancodedados.cidades;
 
-import com.example.bancodedados.cliente.Cliente;
-import com.example.bancodedados.cliente.ClienteRepository;
+import integracao.bancodedados.cidade.Cidade;
+import integracao.bancodedados.cidade.CidadeRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
@@ -27,37 +27,37 @@ usam um banco de dados em memória. */
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @AutoConfigureTestDatabase(connection = EmbeddedDatabaseConnection.H2)
-public class ClientesRepositoryIntegrationTest {
+public class CidadeRepositoryIntegrationTest {
 
 	@Autowired
-	private ClienteRepository clienteRepository;
+	private CidadeRepository cidadeRepository;
 
 	@Rule
 	public ExpectedException expectedException = ExpectedException.none();
 
-	private Cliente cliente;
+	private Cidade cidade;
 
 	@Before
 	public void start() {
-	   cliente = new Cliente("Valerio", "Retiro Natal", "123456789");
+	   cidade = new Cidade("São Luís", 12.4, "UF");
 	}
 
 	@Test
 	public void saveComDddNuloDeveLancarException() throws Exception {
 		expectedException.expect(ConstraintViolationException.class);
-		expectedException.expectMessage("O endereco deve ser preenchido");
+		expectedException.expectMessage("O taxa deve ser preenchido");
 
-		cliente.setEndereco(null);
-		clienteRepository.save(cliente);
+		cidade.settaxa(-1);
+		cidadeRepository.save(cidade);
 	}
 
 	@Test
 	public void saveComTelefoneNuloDeveLancarException() throws Exception {
 		expectedException.expect(ConstraintViolationException.class);
-		expectedException.expectMessage("O Telefone deve ser preenchido");
+		expectedException.expectMessage("O UF deve ser preenchido");
 
-		cliente.setTelefone(null);
-		clienteRepository.save(cliente);
+		cidade.setUF(null);
+		cidadeRepository.save(cidade);
 	}
 
 	@Test
@@ -65,26 +65,26 @@ public class ClientesRepositoryIntegrationTest {
 		expectedException.expect(ConstraintViolationException.class);
 		expectedException.expectMessage("O Nome deve ser preenchido");
 
-		cliente.setNome(null);
-		clienteRepository.save(cliente);
+		cidade.setNome(null);
+		cidadeRepository.save(cidade);
 	}
 
 	@Test
-	public void saveDeveSalvarcliente() {
-		clienteRepository.save(cliente);
-		List<Cliente> clientes = clienteRepository.findAll();
-		Assert.assertEquals(1, clientes.size());
-		clienteRepository.deleteAll();
+	public void saveDeveSalvarcidade() {
+		cidadeRepository.save(cidade);
+		List<Cidade> cidades = cidadeRepository.findAll();
+		Assert.assertEquals(1, cidades.size());
+		cidadeRepository.deleteAll();
 	}
 
 	@Test
-	public void deleteByIdDeveRemovercliente() {
-		clienteRepository.save(cliente);
-		List<Cliente> clientes = clienteRepository.findAll();
-		Assert.assertEquals(1, clientes.size());
+	public void deleteByIdDeveRemovercidade() {
+		cidadeRepository.save(cidade);
+		List<Cidade> cidades = cidadeRepository.findAll();
+		Assert.assertEquals(1, cidades.size());
 
-		clienteRepository.deleteById(cliente.getId());
-		List<Cliente> resultado = clienteRepository.findAll();
+		cidadeRepository.deleteById(cidade.getId());
+		List<Cidade> resultado = cidadeRepository.findAll();
 		Assert.assertEquals(0, resultado.size());
 	}
 

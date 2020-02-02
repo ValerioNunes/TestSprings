@@ -1,4 +1,4 @@
-package com.example.bancodedados.cliente;
+package integracao.bancodedados.cliente;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

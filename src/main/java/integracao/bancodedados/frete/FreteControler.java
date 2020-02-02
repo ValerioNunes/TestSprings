@@ -1,4 +1,4 @@
-package com.example.bancodedados.frete;
+package integracao.bancodedados.frete;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
